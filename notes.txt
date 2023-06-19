@@ -1,0 +1,39 @@
+---004-theory-shaders-and-the-rendering-pipeline
+    -the rendering pipeline is a series of stages that take place
+    -four stages are programmable via 'shaders'.
+    -shaders are pieces of code written in GLSL(OpenGL Shading 
+    Language), or HLSL(High-Level Shading Language) if you're
+    using Direct3D.
+    -GLSL is based on C.
+--the rendering pipeline stages
+	- 01 vertex specification
+	- 02 vertex shader (programmable)
+	- 03 tessellation (programmable)
+	- 04 geometry shader (programmable)
+	- 05 vertex post-processing
+	- 06 primitive assembly
+	- 07 rasterization
+	- 08 fragment shader (programmable)
+	- 09 per-sample operations
+- 01 vertex specification
+	- a vertex (plural: vertices) is a point in space, usually defined 
+	with x,y and z coordinates.
+	-  a primitive is a simple shape defined using one or more vertices.
+	- usually we use triangles, but we can also use points, lines and quads.
+	- vertex specification: setting up the data of the vertices for the 
+	primitives we want to render.
+	- done in the application itself.
+	- use VAOs (Vertex Array Objects) and VBOs (Vertex Buffer Objects).
+	- VAO defines WHAT data a vertex has (position, colour, texture, normals, etc).
+	- VBO defines the data itself.
+	- Attribute pointers define where and how shaders can access vertex data.
+-- vertex specification: creating vao/vbo
+	- generate a VAO ID.
+	- bind the VAO with that ID.
+	- Generate a VBO ID
+	- Bind the VBO with that ID (now you're working on the chosen VBO attached 
+	to the chosen VAO).
+	- attach the vertex data to that VBO.
+	- Define the Attribue Pointer formatting.
+	- Enable the Attribute Pointer.
+	- Unbind the VAO and VBO, ready for the next objetc to be bound.
