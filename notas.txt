@@ -1,0 +1,39 @@
+---004-teoría-shaders-y-el-pipeline-de-renderizado
+-El pipeline de renderizado es una serie de etapas que ocurren.
+-Cuatro etapas son programables mediante 'shaders'.
+-Los shaders son fragmentos de código escritos en GLSL (OpenGL Shading
+Language) o HLSL (High-Level Shading Language) si estás usando Direct3D.
+-GLSL se basa en C.
+--Las etapas del pipeline de renderizado
+- 01 especificación de vértices
+- 02 shader de vértices (programable)
+- 03 teselado (programable)
+- 04 shader de geometría (programable)
+- 05 post-procesamiento de vértices
+- 06 ensamblaje de primitivas
+- 07 rasterización
+- 08 shader de fragmentos (programable)
+- 09 operaciones por muestra
+
+01 especificación de vértices
+Un vértice (plural: vértices) es un punto en el espacio, generalmente definido
+con coordenadas x, y y z.
+Una primitiva es una forma simple definida usando uno o más vértices.
+Normalmente usamos triángulos, pero también podemos usar puntos, líneas y cuadriláteros.
+Especificación de vértices: configurar los datos de los vértices para las
+primitivas que queremos renderizar.
+Se realiza en la propia aplicación.
+Utilizamos VAOs (Objetos de Array de Vértices) y VBOs (Objetos de Búfer de Vértices).
+El VAO define QUÉ datos tiene un vértice (posición, color, textura, normales, etc.).
+El VBO define los propios datos.
+Los punteros de atributos definen dónde y cómo los shaders pueden acceder a los datos de los vértices.
+-- Especificación de vértices: creando VAO/VBO
+Generar un ID de VAO.
+Vincular el VAO con ese ID.
+Generar un ID de VBO.
+Vincular el VBO con ese ID (ahora estás trabajando en el VBO seleccionado
+adjunto al VAO seleccionado).
+Adjuntar los datos de los vértices a ese VBO.
+Definir el formato del puntero de atributo.
+Habilitar el puntero de atributo.
+Desvincular el VAO y el VBO, listo para que el siguiente objeto sea vinculado.
